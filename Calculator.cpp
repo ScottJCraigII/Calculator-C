@@ -12,24 +12,21 @@ Calculator::Calculator(double num){
 }	
 
 double Calculator :: add(double num) {
-	string numStr = to_string(num);
-	expression = "("+expression + " + " + numStr+")";
+	expression = "("+expression + ") + " + to_string(num);
 	result = num + result;
 	cleared = false;
 	return result;
 }
 
 double Calculator :: subtract(double num){
-	string numStr = to_string(num);
-	expression = "("+expression + " - " + numStr+")";
+	expression = "("+expression + ") - " + to_string(num);
 	result = result-num;
 	cleared = false;
 	return result;
 }
 
 double Calculator :: multiply(double num) {
-	string numStr = to_string(num);
-	expression = "("+expression + " * " + numStr+")";
+	expression = "("+expression + ") * " + to_string(num);
 	result = num * result;
 	cleared = false;
 	return result;
@@ -39,17 +36,16 @@ double Calculator :: divide(double num) {
 	if (num == 0){
 		cout << "Cannot divide by zero\n";
 	}else{
-		string numStr = to_string(num);
-		expression = "("+expression + " / " + numStr+")";
-		result = result/num;
+		expression = "("+expression + ") / " + to_string(num);
+		if (result != 0)
+			result = result/num;
 	}
 	cleared = false;
 	return result;
 }
 
 double Calculator :: power(int exp) {
-	string numStr = to_string(exp);
-	expression = "("+expression + ")^(" + numStr+"))";
+	expression = "("+expression + ")^(" + to_string(exp)+")";
 	
 	double base = result;
 	int neg = 1;
@@ -79,18 +75,17 @@ double Calculator :: power(int exp) {
 
 double Calculator::power(double num, int exp){
 		if (cleared){
-			string numStr = to_string(num);
-			expression = numStr;
+			expression = to_string(num);
 			result = num;
 			power(exp);
 		}else
-			cout << "Cannot call power(double,int) when not cleared";
+			cout << "Error, Cannot call power(double,int) when not cleared\n";
 		cleared = false;
 		return result;
 }
 
 void Calculator ::print() const{
-		cout << "Expression evaluated\n"<<expression 
+		cout << "Expression evaluated:\n"<<expression 
 		<< "=\nResult :" << result << endl;
 }
 
