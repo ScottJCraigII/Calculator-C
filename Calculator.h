@@ -2,10 +2,16 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+/***************************************************************************
+ * Name: Scott Craig
+ * Email: sjcraig@email.sc.edu
+ * Function: Calculator object header
+ * 
+ * Copyright (C) 2019 by Scott Craig                                       *
+ *                                                                         *
+ ***************************************************************************/
 class Calculator{
-	
-	
+
 	public:
 		Calculator();
 		Calculator(double);	

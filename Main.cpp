@@ -14,13 +14,13 @@
 
 int main(int argc, char** argv) {
 	
-	Calculator calc1;
+	Calculator calc1(10);
 	calc1.print(); 
 	
 	calc1.add(10); 
 	calc1.print(); 
 	
-	calc1.divide(5); 
+	calc1.divide(0); 
 	calc1.print();
 	
 	calc1.power(2); 
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	calc1.clear(); 
 	calc1.print();
 	
-	calc1.power(5,2);
+	calc1.power(-2,-3);
 	calc1.print();
 
     return 0;
